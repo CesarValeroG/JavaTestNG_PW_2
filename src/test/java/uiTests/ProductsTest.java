@@ -9,7 +9,7 @@ public class ProductsTest extends BaseTest {
     @Test
     public void testProductList() {
         loginPage.validateLoginPageIsDisplayed();
-        loginPage.login("standard_user", "secret_sauce");
+        loginPage.login(username, password);
 
         productsPage.validateIsOnProductsPage();
         productsPage.selectItem("Sauce Labs Backpack");
@@ -21,7 +21,7 @@ public class ProductsTest extends BaseTest {
     @Test
     public void testAddMultipleItemsToCart() {
         loginPage.validateLoginPageIsDisplayed();
-        loginPage.login("standard_user", "secret_sauce");
+        loginPage.login(username, password);
         productsPage.validateIsOnProductsPage();
         productsPage.selectItem("Sauce Labs Backpack");
         productsPage.selectItem("Sauce Labs Bike Light");

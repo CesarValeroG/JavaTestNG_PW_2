@@ -32,7 +32,7 @@ public class LoginTest extends BaseTest {
     @Test
     public void testSuccessfulLogin() {
         loginPage.validateLoginPageIsDisplayed();
-        loginPage.login("standard_user", "secret_sauce");
+        loginPage.login(username, password);
 
         productsPage.validateIsOnProductsPage();
     }

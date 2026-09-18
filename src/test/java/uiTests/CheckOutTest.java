@@ -11,7 +11,7 @@ public class CheckOutTest extends BaseTest {
     @Test
     public void testSuccessfulCheckout() {
         loginPage.validateLoginPageIsDisplayed();
-        loginPage.login("standard_user", "secret_sauce");
+        loginPage.login(username, password);
 
         productsPage.validateIsOnProductsPage();
         productsPage.selectItem("Sauce Labs Backpack");

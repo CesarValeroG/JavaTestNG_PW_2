@@ -11,7 +11,10 @@ import org.testng.ITestResult;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 
+import java.io.FileInputStream;
+import java.io.IOException;
 import java.nio.file.Paths;
+import java.util.Properties;
 
 public abstract class BaseTest {
     protected Page page;
@@ -20,8 +23,11 @@ public abstract class BaseTest {
     protected CartPage cartPage;
     protected CheckOutPage checkoutPage;
 
+    protected String username;
+    protected String password;
+
     @BeforeMethod
-    public void setUp() {
+    public void setUp() throws IOException {
         // Llama al BrowserFactory para inicializar el hilo actual
         page = BrowserFactory.createPage("chromium", false);
 
@@ -30,6 +36,12 @@ public abstract class BaseTest {
         productsPage = new ProductsPage(page);
         cartPage = new CartPage(page);
         checkoutPage = new CheckOutPage(page);
+
+        // Cargar credenciales
+        Properties props = new Properties();
+        props.load(new FileInputStream("src/main/resources/config/credentials.properties"));
+        username = props.getProperty("username");
+        password = props.getProperty("password");
 
         // Navega a la URL inicial
         page.navigate(PlaywrightConfig.BASE_URL);
