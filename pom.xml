@@ -30,6 +30,11 @@
             <artifactId>playwright</artifactId>
             <version>1.55.0</version>
         </dependency>
+        <dependency>
+            <groupId>io.rest-assured</groupId>
+            <artifactId>rest-assured</artifactId>
+            <version>5.5.6</version>
+        </dependency>
     </dependencies>
     <build>
         <plugins>
@@ -39,6 +44,7 @@
                 <version>3.0.0-M5</version>
                 <configuration>
                     <suiteXmlFiles>
+                        <suiteXmlFile>testngAPI.xml</suiteXmlFile>
                         <suiteXmlFile>testngUI.xml</suiteXmlFile>
                     </suiteXmlFiles>
                 </configuration>
