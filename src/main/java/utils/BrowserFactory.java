@@ -5,6 +5,7 @@ import com.microsoft.playwright.BrowserContext;
 import com.microsoft.playwright.BrowserType;
 import com.microsoft.playwright.Page;
 import com.microsoft.playwright.Playwright;
+import config.PlaywrightConfig;
 
 public class BrowserFactory {
 
@@ -21,7 +22,7 @@ public class BrowserFactory {
 
         // Esta linea es opcional de configurar el atributo de testId para facilitar la localización de elementos en pruebas
         // Esto permite usar selectores como page.getByTestId("my-element") en lugar de depender de clases o IDs que pueden cambiar
-        playwrightTL.get().selectors().setTestIdAttribute("data-test");
+        playwrightTL.get().selectors().setTestIdAttribute(PlaywrightConfig.TEST_ID_ATTRIBUTE);
 
         // 2. Configurar y lanzar el Browser
         BrowserType.LaunchOptions launchOptions = new BrowserType.LaunchOptions().setHeadless(headless);

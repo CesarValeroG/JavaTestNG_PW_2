@@ -1,6 +1,7 @@
 package uiTests;
 
 import com.microsoft.playwright.Page;
+import config.PlaywrightConfig;
 import pageObjects.CartPage;
 import pageObjects.CheckOutPage;
 import pageObjects.LoginPage;
@@ -18,7 +19,6 @@ public abstract class BaseTest {
     protected ProductsPage productsPage;
     protected CartPage cartPage;
     protected CheckOutPage checkoutPage;
-    private final String base_URL = "https://www.saucedemo.com/";
 
     @BeforeMethod
     public void setUp() {
@@ -32,7 +32,7 @@ public abstract class BaseTest {
         checkoutPage = new CheckOutPage(page);
 
         // Navega a la URL inicial
-        page.navigate(base_URL);
+        page.navigate(PlaywrightConfig.BASE_URL);
     }
 
     @AfterMethod
