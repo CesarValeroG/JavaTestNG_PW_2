@@ -1,6 +1,6 @@
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
-<suite name="SauceDemoSuite" parallel="methods" thread-count="3">
-    <test name="RegressionTests">
+<suite name="RestfulBookerSuite" parallel="methods" thread-count="3">
+    <test name="BookingApiTests">
         <classes>
             <class name="apiTests.BookingTest"/>
         </classes>

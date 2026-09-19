@@ -17,8 +17,6 @@ import java.nio.file.Paths;
 import java.util.Properties;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
 
 public abstract class BaseTest {
     protected Page page;

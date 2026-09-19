@@ -34,7 +34,7 @@ public class BookingTest extends BaseApiTest {
         Response response = apiClient.getBooking(bookingId);
         Assert.assertEquals(response.statusCode(), 200);
 
-        Booking booking = response.as(Booking.class);
+        Booking booking = response.as(Booking.class);  // deserialize the response to Booking object
         Assert.assertEquals(booking.getFirstname(), "Jim");
         Assert.assertEquals(booking.getLastname(), "Brown");
         logger.info("Booking retrieved with ID: " + bookingId);

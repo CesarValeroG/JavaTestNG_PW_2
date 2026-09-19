@@ -1,5 +1,6 @@
 package uiTests;
 
+import org.testng.Assert;
 import org.testng.annotations.Test;
 
 
@@ -10,7 +11,7 @@ public class LoginTest extends BaseTest {
     public void emptyCredentialsShowsError() {
         loginPage.validateLoginPageIsDisplayed();
         loginPage.login("", "");
-        assert loginPage.getErrorMessage().contains("Username is required");
+        Assert.assertTrue(loginPage.getErrorMessage().contains("Username is required"), "Expected 'Username is required' error message.");
         logger.info("Error message displayed when a value is missing: " + loginPage.getErrorMessage());
     }
 
@@ -19,7 +20,7 @@ public class LoginTest extends BaseTest {
     public void emptyPasswordShowsError() {
         loginPage.validateLoginPageIsDisplayed();
         loginPage.login("standard_user", "");
-        assert loginPage.getErrorMessage().contains("Password is required");
+        Assert.assertTrue(loginPage.getErrorMessage().contains("Password is required"), "Expected 'Password is required' error message.");
         logger.info("Error message displayed when a value is missing: " + loginPage.getErrorMessage());
     }
 
@@ -28,7 +29,7 @@ public class LoginTest extends BaseTest {
     public void invalidUsernameShowsError() {
         loginPage.validateLoginPageIsDisplayed();
         loginPage.login("invalid_user", "invalid_password");
-        assert loginPage.getErrorMessage().contains("Username and password do not match any user in this service");
+        Assert.assertTrue(loginPage.getErrorMessage().contains("Username and password do not match any user in this service"), "Expected authentication error message.");
         logger.info("Error message displayed when invalid credentials are used: " + loginPage.getErrorMessage());
     }
 
