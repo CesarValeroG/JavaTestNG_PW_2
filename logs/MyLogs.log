@@ -5,3 +5,22 @@
 [INFO ] 2026-09-18 19:01:48.810 [main] BookingTest - Booking retrieved with ID: 5803
 [INFO ] 2026-09-18 19:01:49.314 [main] BookingTest - Booking updated with ID: 5803
 [INFO ] 2026-09-18 19:01:49.791 [main] BookingTest - Booking deleted with ID: 5803
+[INFO ] 2026-09-18 19:20:21.830 [TestNG-test-RegressionTests-1] BookingTest - Booking created with ID: 4930
+[INFO ] 2026-09-18 19:20:22.335 [TestNG-test-RegressionTests-2] BookingTest - Booking retrieved with ID: 4930
+[INFO ] 2026-09-18 19:20:22.856 [TestNG-test-RegressionTests-3] BookingTest - Booking updated with ID: 4930
+[INFO ] 2026-09-18 19:20:23.342 [TestNG-test-RegressionTests-3] BookingTest - Booking deleted with ID: 4930
+[INFO ] 2026-09-18 19:25:07.103 [TestNG-test-RegressionTests-1] BookingTest - Booking created with ID: 2241
+[INFO ] 2026-09-18 19:25:07.639 [TestNG-test-RegressionTests-2] BookingTest - Booking retrieved with ID: 2241
+[INFO ] 2026-09-18 19:25:08.135 [TestNG-test-RegressionTests-3] BookingTest - Booking updated with ID: 2241
+[INFO ] 2026-09-18 19:25:08.613 [TestNG-test-RegressionTests-3] BookingTest - Booking deleted with ID: 2241
+[INFO ] 2026-09-18 19:25:24.203 [TestNG-test-RegressionTests-1] CheckOutTest - Checkout process completed successfully.
+[INFO ] 2026-09-18 19:59:14.844 [TestNG-test-RegressionTests-1] BookingTest - Booking created with ID: 4457
+[INFO ] 2026-09-18 19:59:15.385 [TestNG-test-RegressionTests-2] BookingTest - Booking retrieved with ID: 4457
+[INFO ] 2026-09-18 19:59:15.931 [TestNG-test-RegressionTests-3] BookingTest - Booking updated with ID: 4457
+[INFO ] 2026-09-18 19:59:16.387 [TestNG-test-RegressionTests-3] BookingTest - Booking deleted with ID: 4457
+[INFO ] 2026-09-18 19:59:38.082 [TestNG-test-RegressionTests-1] CheckOutTest - Checkout process completed successfully.
+[INFO ] 2026-09-18 21:12:38.912 [TestNG-test-RegressionTests-1] BookingTest - Booking created with ID: 891
+[INFO ] 2026-09-18 21:12:39.604 [TestNG-test-RegressionTests-2] BookingTest - Booking retrieved with ID: 891
+[INFO ] 2026-09-18 21:12:40.121 [TestNG-test-RegressionTests-3] BookingTest - Booking updated with ID: 891
+[INFO ] 2026-09-18 21:12:40.605 [TestNG-test-RegressionTests-3] BookingTest - Booking deleted with ID: 891
+[INFO ] 2026-09-18 21:13:04.306 [TestNG-test-RegressionTests-1] CheckOutTest - Checkout process completed successfully.
