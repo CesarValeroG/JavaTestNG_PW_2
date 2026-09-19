@@ -32,5 +32,6 @@ public class CheckOutTest extends BaseTest {
         Assert.assertTrue(checkoutPage.getTotal() <= 60, "Total price is greater than 60: " + checkoutPage.getTotal());
 
         checkoutPage.clickFinish();
+        logger.info("Checkout process completed successfully.");
     }
 }

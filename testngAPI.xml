@@ -2,7 +2,7 @@
 <suite name="SauceDemoSuite" parallel="methods" thread-count="3">
     <test name="RegressionTests">
         <classes>
-            <class name="apiTest.BookingTest"/>
+            <class name="apiTests.BookingTest"/>
         </classes>
     </test>
 </suite>

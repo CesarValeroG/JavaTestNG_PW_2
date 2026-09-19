@@ -15,6 +15,7 @@ public class ProductsTest extends BaseTest {
         productsPage.selectItem("Sauce Labs Backpack");
         int itemCount = productsPage.getNumberOfItemsInCart();
         Assert.assertEquals(itemCount, 1, "The number of items in the cart is not as expected.");
+        logger.info("Number of items in the cart after adding one product: " + itemCount);
     }
 
     // Verifies that adding multiple products increases the cart badge beyond 3 items.
@@ -30,5 +31,6 @@ public class ProductsTest extends BaseTest {
 
         int itemCount = productsPage.getNumberOfItemsInCart();
         Assert.assertTrue(itemCount > 3, "The cart was expected to contain more than 3 items, but it contained: " + itemCount);
+        logger.info("Number of items in the cart after adding multiple products: " + itemCount);
     }
 }

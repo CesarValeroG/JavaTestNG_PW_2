@@ -15,19 +15,26 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.nio.file.Paths;
 import java.util.Properties;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 public abstract class BaseTest {
     protected Page page;
     protected LoginPage loginPage;
     protected ProductsPage productsPage;
+
     protected CartPage cartPage;
     protected CheckOutPage checkoutPage;
+    protected Logger logger;
 
     protected String username;
     protected String password;
 
     @BeforeMethod
     public void setUp() throws IOException {
+        logger = LogManager.getLogger(this.getClass());
         // Llama al BrowserFactory para inicializar el hilo actual
         page = BrowserFactory.createPage("chromium", false);
 

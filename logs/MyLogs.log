@@ -1,0 +1,7 @@
+[INFO ] 2026-09-18 18:41:37.442 [main] CheckOutTest - Checkout process completed successfully.
+[INFO ] 2026-09-18 18:48:34.848 [TestNG-test-RegressionTests-1] CheckOutTest - Checkout process completed successfully.
+[INFO ] 2026-09-18 18:59:20.048 [TestNG-test-RegressionTests-1] CheckOutTest - Checkout process completed successfully.
+[INFO ] 2026-09-18 19:01:48.305 [main] BookingTest - Booking created with ID: 5803
+[INFO ] 2026-09-18 19:01:48.810 [main] BookingTest - Booking retrieved with ID: 5803
+[INFO ] 2026-09-18 19:01:49.314 [main] BookingTest - Booking updated with ID: 5803
+[INFO ] 2026-09-18 19:01:49.791 [main] BookingTest - Booking deleted with ID: 5803

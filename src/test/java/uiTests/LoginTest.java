@@ -2,6 +2,7 @@ package uiTests;
 
 import org.testng.annotations.Test;
 
+
 public class LoginTest extends BaseTest {
 
     // Verifies that submitting empty username and password shows the required username validation message.
@@ -10,6 +11,7 @@ public class LoginTest extends BaseTest {
         loginPage.validateLoginPageIsDisplayed();
         loginPage.login("", "");
         assert loginPage.getErrorMessage().contains("Username is required");
+        logger.info("Error message displayed when a value is missing: " + loginPage.getErrorMessage());
     }
 
     // Verifies that leaving the password empty shows the required password validation message.
@@ -18,6 +20,7 @@ public class LoginTest extends BaseTest {
         loginPage.validateLoginPageIsDisplayed();
         loginPage.login("standard_user", "");
         assert loginPage.getErrorMessage().contains("Password is required");
+        logger.info("Error message displayed when a value is missing: " + loginPage.getErrorMessage());
     }
 
     // Verifies that entering invalid credentials shows the authentication error message.
@@ -26,6 +29,7 @@ public class LoginTest extends BaseTest {
         loginPage.validateLoginPageIsDisplayed();
         loginPage.login("invalid_user", "invalid_password");
         assert loginPage.getErrorMessage().contains("Username and password do not match any user in this service");
+        logger.info("Error message displayed when invalid credentials are used: " + loginPage.getErrorMessage());
     }
 
     // Verifies that valid credentials redirect the user to the Products page after login.
@@ -35,5 +39,6 @@ public class LoginTest extends BaseTest {
         loginPage.login(username, password);
 
         productsPage.validateIsOnProductsPage();
+        logger.info("Successfully logged in with valid credentials.");
     }
 }

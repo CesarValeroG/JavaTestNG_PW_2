@@ -1,4 +1,4 @@
-package apiTest;
+package apiTests;
 
 import api.models.Booking;
 import api.builders.BookingBuilder;
@@ -26,6 +26,7 @@ public class BookingTest extends BaseApiTest {
 
         bookingId = response.jsonPath().getInt("bookingid");
         System.out.println("Booking ID: " + bookingId);
+        logger.info("Booking created with ID: " + bookingId);
     }
 
     @Test(priority = 2, dependsOnMethods = "createBookingTest")
@@ -35,6 +36,8 @@ public class BookingTest extends BaseApiTest {
 
         Booking booking = response.as(Booking.class);
         Assert.assertEquals(booking.getFirstname(), "Jim");
+        Assert.assertEquals(booking.getLastname(), "Brown");
+        logger.info("Booking retrieved with ID: " + bookingId);
     }
 
     @Test(priority = 3, dependsOnMethods = "getBookingTest")
@@ -51,11 +54,13 @@ public class BookingTest extends BaseApiTest {
         Response response = apiClient.updateBooking(bookingId, updatedBooking);
         Assert.assertEquals(response.statusCode(), 200);
         Assert.assertEquals(response.jsonPath().getString("firstname"), "James");
+        logger.info("Booking updated with ID: " + bookingId);
     }
 
     @Test(priority = 4, dependsOnMethods = "updateBookingTest")
     public void deleteBookingTest() {
         Response response = apiClient.deleteBooking(bookingId);
         Assert.assertEquals(response.statusCode(), 201);
+        logger.info("Booking deleted with ID: " + bookingId);
     }
 }
