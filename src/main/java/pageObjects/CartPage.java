@@ -32,6 +32,8 @@ public class CartPage extends BasePage {
 
     public void clickContinue() {
         continueButton.click();
+        // Wait for the navigation so callers don't read the previous step's title
+        page.waitForURL("**/checkout-step-two.html");
     }
 
     public void fillCheckoutInformation(String firstName, String lastName, String postalCode) {

@@ -10,7 +10,9 @@ pipeline {
 
         stage('Build & Test') {
             steps {
-                bat 'mvn clean test'
+                withCredentials([usernamePassword(credentialsId: 'saucedemo-creds', usernameVariable: 'SAUCE_USER', passwordVariable: 'SAUCE_PASS')]) {
+                    bat 'mvn clean test'
+                }
             }
         }
     }

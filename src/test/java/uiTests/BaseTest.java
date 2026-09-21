@@ -42,11 +42,16 @@ public abstract class BaseTest {
         cartPage = new CartPage(page);
         checkoutPage = new CheckOutPage(page);
 
-        // Cargar credenciales
-        Properties props = new Properties();
-        props.load(new FileInputStream("src/main/resources/config/credentials.properties"));
-        username = props.getProperty("username");
-        password = props.getProperty("password");
+          // Cargar credenciales: primero intenta variables de entorno (Jenkins), si no existen usa el .properties (local)
+        username = System.getenv("SAUCE_USER");
+        password = System.getenv("SAUCE_PASS");
+
+        if (username == null || password == null) {
+            Properties props = new Properties();
+            props.load(new FileInputStream("src/main/resources/config/credentials.properties"));
+            username = props.getProperty("username");
+            password = props.getProperty("password");
+        }
 
         // Navega a la URL inicial
         page.navigate(PlaywrightConfig.BASE_URL);
