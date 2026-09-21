@@ -34,7 +34,7 @@ public abstract class BaseTest {
     public void setUp() throws IOException {
         logger = LogManager.getLogger(this.getClass());
         // Llama al BrowserFactory para inicializar el hilo actual
-        page = BrowserFactory.createPage("chromium", false);
+        page = BrowserFactory.createPage("chromium", true);
 
         // Inicializa las páginas pasándoles la instancia activa de 'page'
         loginPage = new LoginPage(page);
