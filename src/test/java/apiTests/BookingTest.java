@@ -56,7 +56,7 @@ public class BookingTest extends BaseApiTest {
         Assert.assertEquals(response.jsonPath().getString("firstname"), "James");
         logger.info("Booking updated with ID: " + bookingId);
     }
-
+    // Delete
     @Test(priority = 4, dependsOnMethods = "updateBookingTest")
     public void deleteBookingTest() {
         Response response = apiClient.deleteBooking(bookingId);
