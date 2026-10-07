@@ -2,6 +2,7 @@ package uiTests;
 
 import org.testng.Assert;
 import org.testng.annotations.Test;
+import static com.microsoft.playwright.assertions.PlaywrightAssertions.assertThat;
 
 import java.util.List;
 
@@ -21,7 +22,8 @@ public class CheckOutTest extends BaseTest {
         cartPage.completeCheckout("John", "Doe", "12345");
 
         //Validate that is on the checkout overview page
-        Assert.assertEquals(checkoutPage.getCheckOutTitle(), "Checkout: Overview", "Not on the Checkout Overview page.");
+        //Assert.assertEquals(checkoutPage.getCheckOutTitle(), "Checkout: Overview", "Not on the Checkout Overview page.");
+        assertThat(checkoutPage.getCheckOutTitleLocator()).hasText("Checkout: Overview");
 
         // Validate that the selected products are in the checkout overview
         List<String> expectedProducts = List.of("Sauce Labs Backpack", "Sauce Labs Onesie");

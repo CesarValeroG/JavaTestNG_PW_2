@@ -28,6 +28,10 @@ public class CheckOutPage extends BasePage {
         return checkOutTitle.textContent();
     }
 
+    public Locator getCheckOutTitleLocator() {
+        return checkOutTitle;
+    }
+
     // 2. Verificar que los productos elegidos están en el resumen
     public boolean isProductInOrder(String productName) {
         return verifyItemNames.filter(new Locator.FilterOptions().setHasText(productName)).isVisible();
